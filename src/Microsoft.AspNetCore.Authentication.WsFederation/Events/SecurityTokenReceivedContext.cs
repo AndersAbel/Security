@@ -20,11 +20,9 @@ namespace Microsoft.AspNetCore.Authentication.WsFederation
         {
         }
 
-        public WsFederationMessage ProtocolMessage { get; set; }
-
         /// <summary>
-        /// Gets or sets the <see cref="WsFederationMessage"/> that contains the tokens received after redeeming the code at the token endpoint.
+        /// The <see cref="WsFederationMessage"/> received on this request.
         /// </summary>
-        public WsFederationMessage TokenEndpointResponse { get; set; }
+        public WsFederationMessage ProtocolMessage { get; set; }
     }
 }

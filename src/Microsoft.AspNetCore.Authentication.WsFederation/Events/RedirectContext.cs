@@ -12,6 +12,13 @@ namespace Microsoft.AspNetCore.Authentication.WsFederation
     /// </summary>
     public class RedirectContext : PropertiesContext<WsFederationOptions>
     {
+        /// <summary>
+        /// Creates a new context object.
+        /// </summary>
+        /// <param name="context"></param>
+        /// <param name="scheme"></param>
+        /// <param name="options"></param>
+        /// <param name="properties"></param>
         public RedirectContext(
             HttpContext context,
             AuthenticationScheme scheme,
@@ -19,6 +26,9 @@ namespace Microsoft.AspNetCore.Authentication.WsFederation
             AuthenticationProperties properties)
             : base(context, scheme, options, properties) { }
 
+        /// <summary>
+        /// The <see cref="WsFederationMessage"/> used to compose the redirect.
+        /// </summary>
         public WsFederationMessage ProtocolMessage { get; set; }
 
         /// <summary>

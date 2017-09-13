@@ -25,6 +25,9 @@ namespace Microsoft.AspNetCore.Authentication.WsFederation
         /// <summary>
         /// Creates a new WsFederationAuthenticationHandler
         /// </summary>
+        /// <param name="options"></param>
+        /// <param name="encoder"></param>
+        /// <param name="clock"></param>
         /// <param name="logger"></param>
         public WsFederationHandler(IOptionsMonitor<WsFederationOptions> options, ILoggerFactory logger, UrlEncoder encoder, ISystemClock clock)
             : base(options, logger, encoder, clock)
@@ -210,6 +213,7 @@ namespace Microsoft.AspNetCore.Authentication.WsFederation
                 var securityTokenValidatedContext = new SecurityTokenValidatedContext(Context, Scheme, Options, principal, properties)
                 {
                     ProtocolMessage = wsFederationMessage,
+                    SecurityToken = parsedToken,
                 };
 
                 await Options.Events.SecurityTokenValidated(securityTokenValidatedContext);

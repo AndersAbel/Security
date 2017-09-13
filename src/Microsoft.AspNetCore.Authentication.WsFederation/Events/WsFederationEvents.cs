@@ -3,13 +3,11 @@
 
 using System;
 using System.Threading.Tasks;
-using Microsoft.IdentityModel.Protocols;
-using Microsoft.IdentityModel.Protocols.WsFederation;
 
 namespace Microsoft.AspNetCore.Authentication.WsFederation
 {
     /// <summary>
-    /// Specifies events which the <see cref="WsFederationMiddleware"></see> invokes to enable developer control over the authentication process. />
+    /// Specifies events which the <see cref="WsFederationHandler"></see> invokes to enable developer control over the authentication process. />
     /// </summary>
     public class WsFederationEvents : RemoteAuthenticationEvents
     {

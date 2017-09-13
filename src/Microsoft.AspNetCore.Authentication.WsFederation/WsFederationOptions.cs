@@ -15,7 +15,7 @@ using Microsoft.IdentityModel.Tokens.Saml2;
 namespace Microsoft.AspNetCore.Authentication.WsFederation
 {
     /// <summary>
-    /// Configuration options for <see cref="WsFederationMiddleware"/>
+    /// Configuration options for <see cref="WsFederationHandler"/>
     /// </summary>
     public class WsFederationOptions : RemoteAuthenticationOptions
     {
@@ -91,7 +91,7 @@ namespace Microsoft.AspNetCore.Authentication.WsFederation
         }
 
         /// <summary>
-        /// Gets or sets the <see cref="SecurityTokenHandlerCollection"/> of <see cref="SecurityTokenHandler"/>s used to read and validate <see cref="SecurityToken"/>s.
+        /// Gets or sets the collection of <see cref="ISecurityTokenValidator"/> used to read and validate the <see cref="SecurityToken"/>s.
         /// </summary>
         [SuppressMessage("Microsoft.Usage", "CA2208:InstantiateArgumentExceptionsCorrectly", Justification = "By design")]
         [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly", Justification = "By design")]

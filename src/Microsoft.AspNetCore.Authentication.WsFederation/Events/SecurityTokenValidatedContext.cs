@@ -5,9 +5,13 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using Microsoft.AspNetCore.Http;
 using Microsoft.IdentityModel.Protocols.WsFederation;
+using Microsoft.IdentityModel.Tokens;
 
 namespace Microsoft.AspNetCore.Authentication.WsFederation
 {
+    /// <summary>
+    /// The context object used for <see cref="WsFederationEvents.SecurityTokenValidated"/>.
+    /// </summary>
     public class SecurityTokenValidatedContext : RemoteAuthenticationContext<WsFederationOptions>
     {
         /// <summary>
@@ -17,12 +21,14 @@ namespace Microsoft.AspNetCore.Authentication.WsFederation
             : base(context, scheme, options, properties)
             => Principal = principal;
 
+        /// <summary>
+        /// The <see cref="WsFederationMessage"/> received on this request.
+        /// </summary>
         public WsFederationMessage ProtocolMessage { get; set; }
 
-        public JwtSecurityToken SecurityToken { get; set; }
-
-        public WsFederationMessage TokenEndpointResponse { get; set; }
-
-        public string Nonce { get; set; }
+        /// <summary>
+        /// The <see cref="SecurityToken"/> that was validated.
+        /// </summary>
+        public SecurityToken SecurityToken { get; set; }
     }
 }

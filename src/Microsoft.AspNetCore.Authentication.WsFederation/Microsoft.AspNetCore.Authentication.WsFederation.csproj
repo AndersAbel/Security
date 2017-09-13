@@ -1,9 +1,10 @@
 <Project Sdk="Microsoft.NET.Sdk">
+  <Import Project="..\..\build\common.props" />
 
   <PropertyGroup>
     <Description>ASP.NET Core middleware that enables an application to support the WsFederation authentication workflow.</Description>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <PackageTags>aspnetcore;authentication;security</PackageTags>
     <Version>1.0.0-alpha1</Version>
   </PropertyGroup>

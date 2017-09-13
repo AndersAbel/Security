@@ -18,6 +18,10 @@ namespace Microsoft.AspNetCore.Authentication.WsFederation
     {
         private readonly IDataProtectionProvider _dp;
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="dataProtection"></param>
         public WsFederationPostConfigureOptions(IDataProtectionProvider dataProtection)
         {
             _dp = dataProtection;

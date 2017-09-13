@@ -8,6 +8,9 @@ namespace Microsoft.AspNetCore.Authentication.WsFederation
     /// </summary>
     public static class WsFederationDefaults
     {
+        /// <summary>
+        /// The default authentication type used when registering the WsFederationHandler.
+        /// </summary>
         public const string AuthenticationScheme = "Federation";
 
         /// <summary>
@@ -20,6 +23,9 @@ namespace Microsoft.AspNetCore.Authentication.WsFederation
         /// </summary>
         public const string CookieName = "WsFederationAuth";
         
+        /// <summary>
+        /// The default display name used when registering the WsFederationHandler.
+        /// </summary>
         public const string DisplayName = "WsFederation";
 
         internal const string WctxKey = "WsFedAppState";
